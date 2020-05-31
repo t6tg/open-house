@@ -1,13 +1,44 @@
-import React from "react";
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <button className="bg-blue-300 p-2 text-white hover:bg-blue-500">
-        Click Me!!
-      </button>
-    </div>
-  );
+const liff = window.liff;
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: "",
+      userLineID: "",
+      pictureUrl: "",
+      statusMessage: "",
+    };
+  }
+
+  getProfile() {
+    liff.init(async () => {
+      let getProfile = await liff.getProfile();
+      this.setState({
+        name: getProfile.displayName,
+        userLineID: getProfile.userId,
+        pictureUrl: getProfile.pictureUrl,
+        statusMessage: getProfile.statusMessage,
+      });
+    });
+  }
+
+  closeLIFF() {
+    liff.closeWindow();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {this.getProfile}
+        {this.state.name}
+        Hi
+      </div>
+    );
+  }
 }
 
 export default App;
