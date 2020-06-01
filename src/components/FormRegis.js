@@ -1,15 +1,34 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
+import firebase from "./Firestore";
 // import firebase from "firebase";
+
+const liff = window.liff;
+
 export default class FormRegis extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      userLineID: "",
       name: "",
       email: "",
       school: "",
       interested: "",
     };
+    this.initialize = this.initialize.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener("load", this.initialize);
+  }
+
+  initialize() {
+    liff.init(async (data) => {
+      let getProfile = await liff.getProfile();
+      this.setState({
+        userLineID: getProfile.userId,
+      });
+    });
   }
 
   updateInput = (e) => {
@@ -20,7 +39,25 @@ export default class FormRegis extends Component {
 
   addUser = (e) => {
     e.preventDefault();
-    console.log(this.state.name);
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true });
+    db.collection("users").add({
+      userLineID: this.state.userLineID,
+      name: this.state.name,
+      email: this.state.email,
+      school: this.state.school,
+      interested: this.state.interested,
+    });
+    liff
+      .sendMessages([
+        {
+          type: "text",
+          text: "Thank you, Bye!",
+        },
+      ])
+      .then(() => {
+        liff.closeWindow();
+      });
   };
 
   render() {
@@ -42,6 +79,7 @@ export default class FormRegis extends Component {
                   name="name"
                   placeholder="สมชาย สีสวย"
                   onChange={this.updateInput}
+                  required
                 />
               </div>
             </div>
@@ -58,6 +96,7 @@ export default class FormRegis extends Component {
                   name="school"
                   placeholder="โรงเรียนพระจอมเกล้าพระนครเหนือ"
                   onChange={this.updateInput}
+                  required
                 />
               </div>
             </div>
@@ -74,6 +113,7 @@ export default class FormRegis extends Component {
                   name="email"
                   placeholder="example@kmutnb.ac.th"
                   onChange={this.updateInput}
+                  required
                 />
               </div>
             </div>
@@ -88,6 +128,7 @@ export default class FormRegis extends Component {
                   id="grid-state"
                   name="interested"
                   onChange={this.updateInput}
+                  required
                 >
                   <option>
                     Really long option that will likely overlap the chevron
