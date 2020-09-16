@@ -1,0 +1,18 @@
+html,
+body {
+    margin: 0;
+    font-family: 'K2D', sans-serif;
+}
+
+#header {
+    background-color: #AC3520;
+    width: 100%;
+    height: 40%;
+}
+
+#header_img {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+    opacity: 0.2;
+}

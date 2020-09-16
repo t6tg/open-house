@@ -1,5 +1,6 @@
-const getEnv = () => {
-  document.getElementById("os").append(liff.getOS());
+const getPro = async () => {
+  const p = await liff.getProfile();
+  document.getElementById("pictureUrl").src = p.pictureUrl;
 };
 
 async function main() {
