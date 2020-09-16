@@ -1,8 +1,9 @@
-const regis = require("./js/regis");
+import { getEnv } from "./js/regis";
+
 async function main() {
   liff.ready.then(() => {
     if (liff.isInClient()) {
-      regis.getEnv();
+      getEnv();
     } else {
       document.write("กรุณาเข้าผ่าน Line บนมือถือเท่านั้น");
     }
