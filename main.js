@@ -1,6 +1,7 @@
 const getPro = async () => {
   const p = await liff.getProfile();
   document.getElementById("pictureUrl").src = p.pictureUrl;
+  document.getElementById("liff_name").append(p.displayName);
 };
 
 async function main() {

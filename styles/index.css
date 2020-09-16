@@ -5,25 +5,42 @@ body {
 }
 
 #header {
+    display: grid;
+    justify-content: center;
     background-color: #AC3520;
+    height: 180px;
     width: 100%;
     position: relative;
+    background-image: url("../assets/header_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#liff_name {
+    border-radius: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+    background: #fff;
+    padding: 5px 20px;
 }
 
 #pictureUrl {
-    margin: 0;
-    position: absolute;
     width: 100px;
     border-radius: 100px;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    margin: 10px;
+}
 
+
+#header_content {
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #header_img {
     width: 100%;
     object-fit: cover;
     opacity: 0.2;
+    height: 180px;
 }
