@@ -1,4 +1,6 @@
-import { getEnv } from "./js/regis";
+const getEnv = () => {
+  document.getElementById("os").append(liff.getOS());
+};
 
 async function main() {
   liff.ready.then(() => {
