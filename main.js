@@ -1,13 +1,10 @@
-const getEnv = () => {
-  document.getElementById("os").append(liff.getOS());
-};
-
+const regis = require("./js/regis");
 async function main() {
   liff.ready.then(() => {
     if (liff.isInClient()) {
-      getEnv();
+      regis.getEnv();
     } else {
-      document.write("กรุณาเข้าผ่าน Line บนมือถือเท้านั้น");
+      document.write("กรุณาเข้าผ่าน Line บนมือถือเท่านั้น");
     }
   });
   await liff.init({ liffId: "1654164368-LmQGP5pp" });
