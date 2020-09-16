@@ -6,7 +6,7 @@ const getPro = async () => {
 async function main() {
   liff.ready.then(() => {
     if (liff.isInClient()) {
-      getEnv();
+      getPro();
     } else {
       document.write("กรุณาเข้าผ่าน Line บนมือถือเท่านั้น");
     }
