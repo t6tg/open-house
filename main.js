@@ -2,6 +2,7 @@ const getPro = async () => {
   const p = await liff.getProfile();
   document.getElementById("pictureUrl").src = p.pictureUrl;
   document.getElementById("liff_name").innerText = p.displayName;
+  document.getElementById("email").value = liff.getDecodedIDToken().email;
 };
 
 async function main() {
