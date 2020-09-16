@@ -4,7 +4,11 @@ const getEnv = () => {
 
 async function main() {
   liff.ready.then(() => {
-    getEnv();
+    if (liff.isInClient()) {
+      getEnv();
+    } else {
+      document.write("กรุณาเข้าผ่าน Line บนมือถือเท้านั้น");
+    }
   });
   await liff.init({ liffId: "1654164368-LmQGP5pp" });
 }
