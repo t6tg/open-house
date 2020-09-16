@@ -1,5 +1,3 @@
-import liff from "@line/liff";
-
 const getEnv = () => {
   document.getElementById("os").append(liff.getOS());
 };
