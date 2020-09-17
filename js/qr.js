@@ -6,6 +6,10 @@ const qrcode = () => {
   }
 };
 
+const close = () => {
+  liff.closeWindows();
+};
+
 const main = async () => {
   liff.ready.then(() => {
     if (liff.isInClient()) {
