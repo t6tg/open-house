@@ -1,0 +1,10 @@
+html,
+body {
+    margin: 0;
+    font-family: 'K2D', sans-serif;
+    background-image: url("../assets/thx.jpg");
+    background-position: center;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
