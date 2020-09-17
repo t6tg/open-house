@@ -6,9 +6,9 @@ const qrcode = () => {
   }
 };
 
-const close = () => {
+function close() {
   liff.closeWindow();
-};
+}
 
 const main = async () => {
   liff.ready.then(() => {
