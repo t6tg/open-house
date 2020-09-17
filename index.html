@@ -19,12 +19,13 @@
     </div>
     <div id="form">
       <br />
-      <form action="#" method="get">
+      <form onsubmit="upload">
         <div class="input">
           <label for="">ชื่อ - สกุล</label>
           <input
             type="text"
-            name="f_name"
+            name="name"
+            id="name"
             placeholder="ชื่อ - สกุล"
             pattern="[ก-์]{2,}\s[ก-์]{2,}"
             required
@@ -40,13 +41,13 @@
           required
         /><br /><br />
         <label for="">ระดับชั้น</label><br />
-        <select name="" id="" required>
-          <option value="">มัธยมศึกษาปีที่ 1</option>
-          <option value="">มัธยมศึกษาปีที่ 2</option>
-          <option value="">มัธยมศึกษาปีที่ 3</option>
-          <option value="">มัธยมศึกษาปีที่ 4</option>
-          <option value="">มัธยมศึกษาปีที่ 5</option>
-          <option value="">มัธยมศึกษาปีที่ 6</option></select
+        <select name="class" id="class" required>
+          <option value="1">มัธยมศึกษาปีที่ 1</option>
+          <option value="2">มัธยมศึกษาปีที่ 2</option>
+          <option value="3">มัธยมศึกษาปีที่ 3</option>
+          <option value="4">มัธยมศึกษาปีที่ 4</option>
+          <option value="5">มัธยมศึกษาปีที่ 5</option>
+          <option value="6">มัธยมศึกษาปีที่ 6</option></select
         ><br /><br />
         <label for="">โรงเรียน</label>
         <input
