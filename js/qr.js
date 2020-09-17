@@ -6,7 +6,7 @@ const qrcode = () => {
   }
 };
 
-function close() {
+function closeME() {
   liff.closeWindow();
 }
 
