@@ -8,3 +8,17 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+button {
+    color: #AC3520;
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: none;
+}
+
+#container {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+}
