@@ -1,13 +1,12 @@
-// const line = require("@line/bot-sdk");
-// require("dotenv").config();
-
-// const client = new line.Client(config);
-
-// const config = {
-//   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-//   channelSecret: process.env.CHANNEL_SECRET,
-// };
+const line = require("@line/bot-sdk");
+require("dotenv").config();
 export default async function index(fastify) {
+  const client = new line.Client(config);
+
+  const config = {
+    channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
+    channelSecret: process.env.CHANNEL_SECRET,
+  };
   fastify.post("/register", async (req, res) => {
     const { userId } = req.body;
     // client.linkRichMenuToUser(
