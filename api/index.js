@@ -5,7 +5,7 @@ function build() {
     logger: true,
   });
 
-  app.get("/", async (req, res) => {
+  app.get("/uri", async (req, res) => {
     return { status: "ok" };
   });
 
