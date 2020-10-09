@@ -1,5 +1,5 @@
 const fastify = require("fastify");
-const line = require("@line/bot-sdk");
+// const line = require("@line/bot-sdk");
 
 // const config = {
 //   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
