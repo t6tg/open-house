@@ -1,14 +1,10 @@
 const fastify = require("fastify");
-
+const router = require("./router.js");
 function build() {
   const app = fastify({
     logger: true,
   });
-
-  app.get("/uri", async (req, res) => {
-    return { status: "ok" };
-  });
-
+  app.register(router);
   return app;
 }
 

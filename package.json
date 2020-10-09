@@ -1,9 +1,16 @@
 {
   "name": "api-openhouse",
   "dependencies": {
-    "fastify": "^3.5.1"
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
+    "fastify": "^3.5.1",
+    "fastify-cors": "^4.1.0",
+    "fastify-formbody": "^5.0.0"
   },
   "engines": {
     "node": "12.x"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
