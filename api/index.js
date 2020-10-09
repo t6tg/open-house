@@ -1,17 +1,17 @@
 const fastify = require("fastify");
 const line = require("@line/bot-sdk");
-require("dotenv").config();
 
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
   channelSecret: process.env.CHANNEL_SECRET,
 };
 
+const client = new line.Client(config);
+
 function build() {
   const app = fastify({
     logger: true,
   });
-  const client = new line.Client(config);
   app.post("api/v1/register", async (req, res) => {
     const { userId } = req.body;
     client.linkRichMenuToUser(
