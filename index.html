@@ -19,13 +19,13 @@
     </div>
     <div id="form">
       <br />
-      <form onsubmit="upload">
+      <form onsubmit="send(event)">
         <div class="input">
           <label for="">ชื่อ - สกุล</label>
           <input
             type="text"
             name="name"
-            id="name"
+            id="regis_name"
             placeholder="ชื่อ - สกุล"
             pattern="[ก-์]{2,}\s[ก-์]{2,}"
             required
@@ -38,10 +38,13 @@
           name="email"
           id="email"
           placeholder="example@kmutnb.com"
+          aria-describedby="emailHelp"
           required
-        /><br /><br />
+        /><small id="emailHelp" class="form-text text-muted"
+          >เราจะไม่เผยแพร่ที่อยู่อีเมลให้กับผู้อื่น</small
+        ><br /><br />
         <label for="">ระดับชั้น</label><br />
-        <select name="class" id="class" required>
+        <select name="class" id="regis_class" required>
           <option value="1">มัธยมศึกษาปีที่ 1</option>
           <option value="2">มัธยมศึกษาปีที่ 2</option>
           <option value="3">มัธยมศึกษาปีที่ 3</option>
@@ -52,17 +55,19 @@
         <label for="">โรงเรียน</label>
         <input
           type="text"
+          id="school"
           name="school"
           placeholder="โรงเรียน"
           required
         /><br /><br />
-        <input type="submit" value="ลงทะเบียน" />
+        <input type="submit" value="ลงทะเบียน" id="btn" />
       </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script
       charset="utf-8"
       src="https://static.line-scdn.net/liff/edge/2/sdk.js"
     ></script>
-    <script type="text/javascript" src="./main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>

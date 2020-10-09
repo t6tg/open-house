@@ -1,0 +1,9 @@
+{
+  "name": "api-openhouse",
+  "dependencies": {
+    "fastify": "^3.5.1"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}
