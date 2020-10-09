@@ -30,13 +30,16 @@ async function send(e) {
   const school = document.getElementById("school").value;
 
   try {
-    const result = await axios.post("localhost:3000/api/v1/register", {
-      name,
-      email,
-      regis_class,
-      school,
-      userId,
-    });
+    const result = await axios.post(
+      "https://api-openhouse.vercel.app/api/v1/register",
+      {
+        name,
+        email,
+        regis_class,
+        school,
+        userId,
+      }
+    );
     if (result.status == 200) {
       console.log("done");
       liff.closeWindow();
