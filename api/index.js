@@ -15,7 +15,7 @@ function build() {
   const client = new line.Client(config);
   app.register(require("fastify-cors"));
   app.register(require("fastify-formbody"));
-  app.register(router);
+  app.register(router, { prefix: "/api/v1" });
 
   return app;
 }
