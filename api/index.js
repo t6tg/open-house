@@ -6,9 +6,7 @@ function build() {
   });
 
   app.get("/", async (req, res) => {
-    const { name = "World" } = req.query;
-    req.log.info({ name }, "hello world!");
-    return `Hello ${name}!`;
+    return { status: "ok" };
   });
 
   return app;
