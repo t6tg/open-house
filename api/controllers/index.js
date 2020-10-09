@@ -8,7 +8,7 @@ const config = {
   channelSecret: process.env.CHANNEL_SECRET,
 };
 export default async function index(fastify) {
-  fastify.post("/link-richmenu", async (req, res) => {
+  fastify.post("/register", async (req, res) => {
     const { userId } = req.body;
     client.linkRichMenuToUser(
       userId,
